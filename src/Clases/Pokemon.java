@@ -43,7 +43,7 @@ public class Pokemon {
     public void setAtaque(byte ataque) {
         this.ataque = ataque;
     }
-    public void addataque() {
+    public void addAtaque() {
         if (ataques.size() < 4) {
             Ataque ataque = new Ataque("Ataque" + (ataques.size() + 1), TipoDano.Fisico, (short) 10);
             ataques.add(ataque);
