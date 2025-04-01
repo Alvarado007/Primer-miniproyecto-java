@@ -1,31 +1,34 @@
 package Clases;
 import Enums.TipoDano;
+import Enums.TiposPokemon;
 
 public class Ataque {
-    private String nombre;
-    private TipoDano tipo;
+    private String nombreAtaque;
+    private TipoDano tipoDano;
     private short potencia;
+    private TiposPokemon tipoAtaque;
     
-    public Ataque(String nombre, TipoDano tipo, short potencia) {
-        this.nombre = nombre;
-        this.tipo = tipo;
+    public Ataque(String nombreAtaque, TipoDano tipoDano, short potencia, TiposPokemon tipoAtaque) {
+        this.nombreAtaque = nombreAtaque;
+        this.tipoDano = tipoDano;
         this.potencia = potencia;
+        this.tipoAtaque = tipoAtaque;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreAtaque() {
+        return nombreAtaque;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreAtaque(String nombreAtaque) {
+        this.nombreAtaque = nombreAtaque;
     }
 
-    public TipoDano getTipo() {
-        return tipo;
+    public TipoDano getTipoDano() {
+        return tipoDano;
     }
 
-    public void setTipo(TipoDano tipo) {
-        this.tipo = tipo;
+    public void setTipoDano(TipoDano tipoDano) {
+        this.tipoDano = tipoDano;
     }
 
     public short getPotencia() {
@@ -36,5 +39,12 @@ public class Ataque {
         this.potencia = potencia;
     }
 
-    
+    public TiposPokemon getTipoAtaque() {
+        return tipoAtaque;
+    }
+
+    public void setTipoAtaque(TiposPokemon tipoAtaque) {
+        this.tipoAtaque = tipoAtaque;
+    }
+
 }
