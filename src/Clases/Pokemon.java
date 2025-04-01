@@ -1,3 +1,4 @@
+package Clases;
 import Enums.TiposPokemon;
 
 public class Pokemon {
