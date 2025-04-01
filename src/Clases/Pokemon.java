@@ -1,8 +1,12 @@
 package Clases;
+import java.util.ArrayList;
+
+import Enums.TipoDano;
 import Enums.TiposPokemon;
 
 public class Pokemon {
     private String nombre;
+    private ArrayList<Ataque> ataques;
     private TiposPokemon tipo;
     private short vida;
     private byte ataque;
@@ -38,6 +42,17 @@ public class Pokemon {
     }
     public void setAtaque(byte ataque) {
         this.ataque = ataque;
+    }
+    public void addataque() {
+        if (ataques.size() < 4) {
+            Ataque ataque = new Ataque("Ataque" + (ataques.size() + 1), TipoDano.Fisico, (short) 10);
+            ataques.add(ataque);
+        } else {
+            System.out.println("No se pueden agregar más ataques.");
+        }
+    }
+    public ArrayList<Ataque> getAtaques() {
+        return ataques;
     }
 
     
