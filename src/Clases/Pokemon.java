@@ -9,14 +9,12 @@ public class Pokemon {
     private ArrayList<Ataque> ataques;
     private TiposPokemon tipo;
     private short vida;
-    private byte ataque;
 
     
-    public Pokemon(String nombre, TiposPokemon tipo, short vida, byte ataque) {
+    public Pokemon(String nombre, TiposPokemon tipo, short vida) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.vida = vida;
-        this.ataque = ataque;
     }
     
     public String getNombre() {
@@ -37,15 +35,9 @@ public class Pokemon {
     public void setVida(short vida) {
         this.vida = vida;
     }
-    public byte getAtaque() {
-        return ataque;
-    }
-    public void setAtaque(byte ataque) {
-        this.ataque = ataque;
-    }
     public void addAtaque() {
         if (ataques.size() < 4) {
-            Ataque ataque = new Ataque("Ataque" + (ataques.size() + 1), TipoDano.Fisico, (short) 10);
+            Ataque ataque = new Ataque("NombreAtaque", TipoDano.Fisico, (short) 50, TiposPokemon.FUEGO);
             ataques.add(ataque);
         } else {
             System.out.println("No se pueden agregar más ataques.");
