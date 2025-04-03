@@ -45,7 +45,7 @@ public class Pokemon {
     }
     public void addAtaque() {
         if (ataques.size() < 4) {
-            Ataque ataque = new Ataque("Ataque" + (ataques.size() + 1), TipoDano.Fisico, (short) 10);
+            Ataque ataque = new Ataque("Ataque" , TipoDano.Fisico, (short) 10,this.tipo);
             ataques.add(ataque);
         } else {
             System.out.println("No se pueden agregar más ataques.");
