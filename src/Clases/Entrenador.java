@@ -68,7 +68,7 @@ public class Entrenador {
                     agregarPokemonEquipo(pokemon);
                     break;
                 } else {
-                    System.out.println("La vida debe ser mayor a 0.");
+                    System.out.println("La vida debe ser mayor a 50.");
                 }
             }
         }
@@ -98,7 +98,6 @@ public class Entrenador {
             pokemones.add(new Pokemon("Raichu", TiposPokemon.ELECTRICO, (short)180));
             pokemones.add(new Pokemon("Arcanine", TiposPokemon.FUEGO, (short)200));
             for (int i=0; i<3; i++){
-                System.out.println(i);
                 int randomIndex = (int) (Math.random() * pokemones.size());
                 Pokemon pokemon = pokemones.get(randomIndex);
                 agregarPokemonEquipo(pokemon);
@@ -108,16 +107,22 @@ public class Entrenador {
     public void agregraAtaquesPokemonesAutomatico(Scanner sc) {
         ArrayList<Ataque>ataques=Ataque.getAtaques();
         for (Pokemon pokemon : equipo_entrenador) {
-            for (Ataque ataque : ataques) {
-                if (pokemon.getTipo().equals(ataque.getTipoAtaque())) {
-                    pokemon.addAtaque(ataque);
+            for (int i=0; i<4; i++){
+                while (true){
+                    int randomIndex = (int) (Math.random() * ataques.size());
+                    Ataque ataque = ataques.get(randomIndex);
+                    if (ataque.getTipoAtaque().equals(pokemon.getTipo())){
+                        pokemon.addAtaque(ataque);
+                        ataques.remove(randomIndex);
+                        break;
+                    } 
                 }
             }
         }
     }
     public void agregarAtaquePokemonManual(Scanner sc) {
         for (Pokemon pokemon : equipo_entrenador) {
-            for  (int i=0; i<3; i++){
+            for (int i=0; i<4; i++){
                 while (true){
                     System.out.println("Ingrese el nombre del ataque" + pokemon.getNombre() + ": ");
                     String nombreAtaque = sc.nextLine();
@@ -156,7 +161,7 @@ public class Entrenador {
                     System.out.println("Ingrese la potencia del ataque: ");
                     short potencia = sc.nextShort();
                     sc.nextLine(); // Consumir el salto de línea
-                    if ((potencia>0 && potencia<100)&& (tipoAtaque.equals(pokemon.getTipo()))){ 
+                    if ((potencia>20 && potencia<100)&& (tipoAtaque.equals(pokemon.getTipo()))){ 
                         Ataque ataque = new Ataque(nombreAtaque, tipoDano, potencia, tipoAtaque);
                         pokemon.addAtaque(ataque);
                         break;
@@ -171,6 +176,7 @@ public class Entrenador {
         int contador = 1;
         for (Pokemon pokemon : equipo_entrenador) {
             System.out.println(contador++ + "Nombre: " + pokemon.getNombre());
+            pokemon.mostarAtaques();
         }
     }
 

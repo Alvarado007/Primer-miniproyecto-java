@@ -49,5 +49,11 @@ public class Pokemon {
         return ataques;
     }
 
+    public void mostarAtaques() {
+        for (Ataque ataque : ataques) {
+            System.out.println("Nombre: " + ataque.getNombreAtaque() + ", Potencia: " + ataque.getPotencia() + ", Tipo: " + ataque.getTipoAtaque() + ", Tipo de Daño: " + ataque.getTipoDano());
+        }
+    }
+
     
 }

@@ -64,33 +64,14 @@ public class Visualizacion {
                     }
                     break;
                 }
+                case 3:{
+                    Entrenador entrenador1 =entrenadores.get(0);
+                    entrenador1.mostrarEquipo();
+                    return; // Salir del método y, por lo tanto, del juego
+                }
                 default:
                     System.out.println("Opción no válida.");
             }
         }
     } 
-
-    public void agregar_ataques_manuales(Scanner sc, Entrenador entrenador1){
-        for (int i=0; i<3; i++){
-            System.out.println("Ingrese el nombre del ataque: ");
-            String nombreAtaque = sc.nextLine();
-            System.out.println("Ingrese la opcion de ataque: ");
-            System.out.println("1- Fisico");
-            System.out.println("2- Psiquico");
-            System.out.println("3- Electrico");
-            System.out.println("4- Agua");
-            TiposPokemon tipoAtaque = null;
-            int opcionAtaque = sc.nextInt();
-            sc.nextLine(); // Consumir el salto de línea
-            if (opcionAtaque == 1){
-                tipoAtaque = TiposPokemon.FUEGO;
-            } else if (opcionAtaque == 2){
-                tipoAtaque = TiposPokemon.PSIQUICO;
-            } else if (opcionAtaque == 3){
-                tipoAtaque = TiposPokemon.ELECTRICO;
-            } else if (opcionAtaque == 4){
-                tipoAtaque = TiposPokemon.AGUA;
-            }
-        }
-    }
 }
