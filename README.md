@@ -7,10 +7,6 @@
   <img src="https://github-readme-stats.vercel.app/api/pin/?username=Alvarado007&repo=Primer-miniproyecto-java&theme=dracula" height="150" alt="project stats" />
 </div>
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Alvarado007&repo=Primer-miniproyecto-java&layout=compact&theme=dracula" alt="Lenguajes Más Utilizados" />
-</div>
-
 ###
 
 <img align="right" height="150" src="https://i.gifer.com/origin/7d/7dab25c7b14a249bbc4790176883d1c5_w200.gif?cid=6c09b952llhupk66joic0ml8gbch148n2dfdqsvzj7z7f0em&ep=v1_gifs_search&rid=200w.gif&ct=g"  />
