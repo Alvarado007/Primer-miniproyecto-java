@@ -69,8 +69,8 @@ git clone https://github.com/Alvarado007/Primer-miniproyecto-java.git
 
 ### 👥 Autores
 - Samuel Alvarado – [GitHub](https://github.com/Alvarado007)
-- Santiago Arboleda – [GitHub](https://github.com/USERNAME)
-- Juan Manuel Gómez – [GitHub](https://github.com/USERNAME)
+- Santiago Arboleda – [GitHub](https://github.com/SantiagoA0408)
+- Juan Manuel Gómez – [GitHub](https://github.com/JuanManuelG26706)
 
 ### 📬 Contacto
 Si quieres mejorar este proyecto o darme sugerencias, no dudes en escribirme.
