@@ -74,9 +74,30 @@ public class Entrenador {
     }
 
     public void elegirPokemonBatallaAutomatico() {
-        
-    }
-
+        ArrayList<Pokemon> pokemones = new ArrayList<>();
+            pokemones.add(new Pokemon("Pikachu", TiposPokemon.ELECTRICO, (short)100));
+            pokemones.add(new Pokemon("Charmander", TiposPokemon.FUEGO,(short)120));
+            pokemones.add(new Pokemon("Squirtle", TiposPokemon.AGUA, (short)110));
+            pokemones.add(new Pokemon("Psyduck", TiposPokemon.PSIQUICO,(short) 90));
+            pokemones.add(new Pokemon("Bulbasaur", TiposPokemon.AGUA, (short)130));
+            pokemones.add(new Pokemon("Jigglypuff", TiposPokemon.PSIQUICO, (short)80));
+            pokemones.add(new Pokemon("Meowth", TiposPokemon.ELECTRICO, (short)140));
+            pokemones.add(new Pokemon("Snorlax", TiposPokemon.FUEGO, (short)150));
+            pokemones.add(new Pokemon("Eevee", TiposPokemon.AGUA, (short)160));
+            pokemones.add(new Pokemon("Mewtwo", TiposPokemon.PSIQUICO, (short)170));
+            pokemones.add(new Pokemon("Gengar", TiposPokemon.ELECTRICO, (short)180));
+            pokemones.add(new Pokemon("Charizard", TiposPokemon.FUEGO, (short)190));
+            pokemones.add(new Pokemon("Blastoise", TiposPokemon.AGUA, (short)200));
+            pokemones.add(new Pokemon("Alakazam", TiposPokemon.PSIQUICO, (short)200));
+            pokemones.add(new Pokemon("Raichu", TiposPokemon.ELECTRICO, (short)180));
+            pokemones.add(new Pokemon("Arcanine", TiposPokemon.FUEGO, (short)200));
+            for (int i=0; i<3; i++){
+                int randomIndex = (int) (Math.random() * pokemones.size());
+                Pokemon pokemon = pokemones.get(randomIndex);
+                agregarPokemonEquipo(pokemon);
+                pokemones.remove(randomIndex);
+            }
+        }
     public void mostrarEquipo() {
         for (Pokemon pokemon : equipo_entrenador) {
             System.out.println("Nombre: " + pokemon.getNombre());
