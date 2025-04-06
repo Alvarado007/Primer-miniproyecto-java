@@ -27,20 +27,19 @@ public class Visualizacion {
             System.out.println("2- Entrenador 2");
             System.out.println("3- Salir");
             int opcion = sc.nextInt();
-            sc.nextLine(); // Consumir el salto de línea
+            sc.nextLine();
             switch (opcion) {
                 case 1:{
                     Entrenador entrenador1 =entrenadores.get(0);
-                    System.out.println("Como  quieres elgir tus pokemones 1- Manual o 2- Automatico: ");
+                    System.out.println("Como  quieres elegir tus pokemones 1- Manual o 2- Automatico: ");
                     int opcionEleccion = sc.nextInt();
-                    sc.nextLine(); // Consumir el salto de línea
+                    sc.nextLine();
                     if (opcionEleccion == 1){
                         entrenador1.elegirPokemonBatallaManual(sc);
                         entrenador1.agregarAtaquePokemonManual(sc);
                     } else if (opcionEleccion == 2){
                         entrenador1.elegirPokemonBatallaAutomatico(sc);
                         entrenador1.agregraAtaquesPokemonesAutomatico(sc);
-                        // Aquí puedes agregar la lógica para agregar Pokémon automáticamente
                     } else {
                         System.out.println("Opción no válida.");
                     }
@@ -51,14 +50,13 @@ public class Visualizacion {
                     Entrenador entrenador2 =entrenadores.get(1);
                     System.out.println("Como  quieres elegir tus pokemones 1- Manual o 2- Automatico: ");
                     int opcionEleccion = sc.nextInt();
-                    sc.nextLine(); // Consumir el salto de línea
+                    sc.nextLine();
                     if (opcionEleccion == 1){
                         entrenador2.elegirPokemonBatallaManual(sc);
                         entrenador2.agregarAtaquePokemonManual(sc);
                     } else if (opcionEleccion == 2){
                         entrenador2.elegirPokemonBatallaAutomatico(sc);
                         entrenador2.agregraAtaquesPokemonesAutomatico(sc);
-                        // Aquí puedes agregar la lógica para agregar Pokémon automáticamente
                     } else {
                         System.out.println("Opción no válida.");
                     }
@@ -67,7 +65,9 @@ public class Visualizacion {
                 case 3:{
                     Entrenador entrenador1 =entrenadores.get(0);
                     entrenador1.mostrarEquipo();
-                    return; // Salir del método y, por lo tanto, del juego
+                    Entrenador entrenador2 =entrenadores.get(1);
+                    entrenador2.mostrarEquipo();
+                    return;
                 }
                 default:
                     System.out.println("Opción no válida.");
