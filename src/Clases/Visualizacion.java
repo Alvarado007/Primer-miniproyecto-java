@@ -31,13 +31,37 @@ public class Visualizacion {
             switch (opcion) {
                 case 1:{
                     Entrenador entrenador1 =entrenadores.get(0);
-                    entrenador1.elegirPokemonBatallaManual(sc);
+                    System.out.println("Como  quieres elgir tus pokemones 1- Manual o 2- Automatico: ");
+                    int opcionEleccion = sc.nextInt();
+                    sc.nextLine(); // Consumir el salto de línea
+                    if (opcionEleccion == 1){
+                        entrenador1.elegirPokemonBatallaManual(sc);
+                        entrenador1.agregarAtaquePokemonManual(sc);
+                    } else if (opcionEleccion == 2){
+                        entrenador1.elegirPokemonBatallaAutomatico(sc);
+                        entrenador1.agregraAtaquesPokemonesAutomatico(sc);
+                        // Aquí puedes agregar la lógica para agregar Pokémon automáticamente
+                    } else {
+                        System.out.println("Opción no válida.");
+                    }
                     break;
                     }
 
                 case 2:{
                     Entrenador entrenador2 =entrenadores.get(1);
-                    entrenador2.elegirPokemonBatallaManual(sc);
+                    System.out.println("Como  quieres elgir tus pokemones 1- Manual o 2- Automatico: ");
+                    int opcionEleccion = sc.nextInt();
+                    sc.nextLine(); // Consumir el salto de línea
+                    if (opcionEleccion == 1){
+                        entrenador2.elegirPokemonBatallaManual(sc);
+                        entrenador2.agregarAtaquePokemonManual(sc);
+                    } else if (opcionEleccion == 2){
+                        entrenador2.elegirPokemonBatallaAutomatico(sc);
+                        entrenador2.agregraAtaquesPokemonesAutomatico(sc);
+                        // Aquí puedes agregar la lógica para agregar Pokémon automáticamente
+                    } else {
+                        System.out.println("Opción no válida.");
+                    }
                     break;
                 }
                 default:
@@ -45,7 +69,7 @@ public class Visualizacion {
             }
         }
     } 
-    
+
     public void agregar_ataques_manuales(Scanner sc, Entrenador entrenador1){
         for (int i=0; i<3; i++){
             System.out.println("Ingrese el nombre del ataque: ");
