@@ -9,7 +9,7 @@ import Enums.TiposPokemon;
 public class Entrenador {
     private String nombre_entrenador;
     private ArrayList<Pokemon> equipo_entrenador;
-    static int contador_pokemones = 0;
+    private int contador_pokemones = 0;
 
 
     public String getNombre_entrenador() {
