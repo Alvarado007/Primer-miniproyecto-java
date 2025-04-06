@@ -49,7 +49,7 @@ public class Visualizacion {
 
                 case 2:{
                     Entrenador entrenador2 =entrenadores.get(1);
-                    System.out.println("Como  quieres elgir tus pokemones 1- Manual o 2- Automatico: ");
+                    System.out.println("Como  quieres elegir tus pokemones 1- Manual o 2- Automatico: ");
                     int opcionEleccion = sc.nextInt();
                     sc.nextLine(); // Consumir el salto de línea
                     if (opcionEleccion == 1){

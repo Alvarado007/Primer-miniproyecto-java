@@ -38,9 +38,9 @@ public class Entrenador {
 
     public void elegirPokemonBatallaManual(Scanner sc) {
         for (int i=0; i<3; i++){
-            System.out.println("Ingrese el nombre del pokemon: ");
+            System.out.println("Ingrese el nombre del Pókemon: ");
             String nombrePokemon = sc.nextLine();
-            System.out.println("Ingrese la opcion de pokemon: ");
+            System.out.println("Ingrese la opción de Pókemon: ");
             System.out.println("1- Agua");
             System.out.println("2- Fuego");
             System.out.println("3- Electrico");
@@ -60,7 +60,7 @@ public class Entrenador {
                 System.out.println("Opción no válida.");
             }
             while(true){
-                System.out.println("Ingrese la vida del pokemon: ");
+                System.out.println("Ingrese la vida del Pókemon: ");
                 short vidaPokemon = sc.nextShort();
                 sc.nextLine(); // Consumir el salto de línea
                 if (vidaPokemon > 50 && vidaPokemon < 200){
