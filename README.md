@@ -8,9 +8,8 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Alvarado007&repo=Primer-miniproyecto-java&show_icons=true&theme=dracula" alt="Estadísticas del Repositorio" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Alvarado007&repo=Primer-miniproyecto-java&layout=compact&theme=dracula" alt="Lenguajes Más Utilizados" />
 </div>
-
 
 ###
 
