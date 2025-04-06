@@ -7,6 +7,7 @@ import Enums.TiposPokemon;
 
 public class Visualizacion {
     ArrayList<Entrenador> entrenadores = new ArrayList<Entrenador>();
+
     public void iniciarJuego(Scanner sc) {
         System.out.println("Bienvenido al juego de Pokémon!");
         System.out.print("Ingrese el nombre del entrenador 1: ");
@@ -30,55 +31,47 @@ public class Visualizacion {
             switch (opcion) {
                 case 1:{
                     Entrenador entrenador1 =entrenadores.get(0);
-                    agregar_pokemones(sc, entrenador1);
+                    System.out.println("Como  quieres elgir tus pokemones 1- Manual o 2- Automatico: ");
+                    int opcionEleccion = sc.nextInt();
+                    sc.nextLine(); // Consumir el salto de línea
+                    if (opcionEleccion == 1){
+                        entrenador1.elegirPokemonBatallaManual(sc);
+                        entrenador1.agregarAtaquePokemonManual(sc);
+                    } else if (opcionEleccion == 2){
+                        entrenador1.elegirPokemonBatallaAutomatico(sc);
+                        entrenador1.agregraAtaquesPokemonesAutomatico(sc);
+                        // Aquí puedes agregar la lógica para agregar Pokémon automáticamente
+                    } else {
+                        System.out.println("Opción no válida.");
+                    }
                     break;
                     }
 
                 case 2:{
                     Entrenador entrenador2 =entrenadores.get(1);
-                    agregar_pokemones(sc, entrenador2);
+                    System.out.println("Como  quieres elegir tus pokemones 1- Manual o 2- Automatico: ");
+                    int opcionEleccion = sc.nextInt();
+                    sc.nextLine(); // Consumir el salto de línea
+                    if (opcionEleccion == 1){
+                        entrenador2.elegirPokemonBatallaManual(sc);
+                        entrenador2.agregarAtaquePokemonManual(sc);
+                    } else if (opcionEleccion == 2){
+                        entrenador2.elegirPokemonBatallaAutomatico(sc);
+                        entrenador2.agregraAtaquesPokemonesAutomatico(sc);
+                        // Aquí puedes agregar la lógica para agregar Pokémon automáticamente
+                    } else {
+                        System.out.println("Opción no válida.");
+                    }
                     break;
+                }
+                case 3:{
+                    Entrenador entrenador1 =entrenadores.get(0);
+                    entrenador1.mostrarEquipo();
+                    return; // Salir del método y, por lo tanto, del juego
                 }
                 default:
                     System.out.println("Opción no válida.");
             }
         }
     } 
-    public void agregar_pokemones(Scanner sc, Entrenador entrenador1){ 
-        for (int i=0; i<3; i++){
-            System.out.println("Ingrese el nombre del pokemon: ");
-            String nombrePokemon = sc.nextLine();
-            System.out.println("Ingrese la opcion de pokemon: ");
-            System.out.println("1- Agua");
-            System.out.println("2- Fuego");
-            System.out.println("3- Electrico");
-            System.out.println("4- Psiquico");
-            TiposPokemon tipoPokemon = null;
-            int opcionPokemon = sc.nextInt();
-            sc.nextLine(); // Consumir el salto de línea
-            if (opcionPokemon == 1){
-                tipoPokemon = TiposPokemon.AGUA;
-            } else if (opcionPokemon == 2){
-                tipoPokemon = TiposPokemon.FUEGO;
-            } else if (opcionPokemon == 3){
-                tipoPokemon = TiposPokemon.ELECTRICO;
-            } else if (opcionPokemon == 4){
-                tipoPokemon = TiposPokemon.PSIQUICO;
-            } else {
-                System.out.println("Opción no válida.");
-            }
-            while(true){
-                System.out.println("Ingrese la vida del pokemon: ");
-                short vidaPokemon = sc.nextShort();
-                sc.nextLine(); // Consumir el salto de línea
-                if (vidaPokemon > 50 && vidaPokemon < 200){
-                    Pokemon pokemon = new Pokemon(nombrePokemon, tipoPokemon, vidaPokemon);
-                    entrenador1.agregarPokemonEquipo(pokemon);
-                    break;
-                } else {
-                    System.out.println("La vida debe ser mayor a 0.");
-                }
-            }
-        }
-    }
 }
