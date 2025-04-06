@@ -27,7 +27,6 @@ Este proyecto es una simulación de combates entre Pokémon utilizando Java. El 
 ### ✨ Características:
 - Simulación por consola de batallas entre Pokémon.
 - Sistema de ataques con nombre, poder y tipo.
-- Interfaz de visualización basada en arte ASCII.
 - Clases bien estructuradas: `Entrenador`, `Pokemon`, `Ataque`, `Visualizacion`.
 
 ### 📊 Relación entre Clases
