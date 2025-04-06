@@ -7,6 +7,7 @@ import Enums.TiposPokemon;
 
 public class Visualizacion {
     ArrayList<Entrenador> entrenadores = new ArrayList<Entrenador>();
+
     public void iniciarJuego(Scanner sc) {
         System.out.println("Bienvenido al juego de Pokémon!");
         System.out.print("Ingrese el nombre del entrenador 1: ");
@@ -30,13 +31,13 @@ public class Visualizacion {
             switch (opcion) {
                 case 1:{
                     Entrenador entrenador1 =entrenadores.get(0);
-                    agregar_pokemones(sc, entrenador1);
+                    entrenador1.elegirPokemonBatallaManual(sc);
                     break;
                     }
 
                 case 2:{
                     Entrenador entrenador2 =entrenadores.get(1);
-                    agregar_pokemones(sc, entrenador2);
+                    entrenador2.elegirPokemonBatallaManual(sc);
                     break;
                 }
                 default:
@@ -44,40 +45,27 @@ public class Visualizacion {
             }
         }
     } 
-    public void agregar_pokemones(Scanner sc, Entrenador entrenador1){ 
+    
+    public void agregar_ataques_manuales(Scanner sc, Entrenador entrenador1){
         for (int i=0; i<3; i++){
-            System.out.println("Ingrese el nombre del pokemon: ");
-            String nombrePokemon = sc.nextLine();
-            System.out.println("Ingrese la opcion de pokemon: ");
-            System.out.println("1- Agua");
-            System.out.println("2- Fuego");
+            System.out.println("Ingrese el nombre del ataque: ");
+            String nombreAtaque = sc.nextLine();
+            System.out.println("Ingrese la opcion de ataque: ");
+            System.out.println("1- Fisico");
+            System.out.println("2- Psiquico");
             System.out.println("3- Electrico");
-            System.out.println("4- Psiquico");
-            TiposPokemon tipoPokemon = null;
-            int opcionPokemon = sc.nextInt();
+            System.out.println("4- Agua");
+            TiposPokemon tipoAtaque = null;
+            int opcionAtaque = sc.nextInt();
             sc.nextLine(); // Consumir el salto de línea
-            if (opcionPokemon == 1){
-                tipoPokemon = TiposPokemon.AGUA;
-            } else if (opcionPokemon == 2){
-                tipoPokemon = TiposPokemon.FUEGO;
-            } else if (opcionPokemon == 3){
-                tipoPokemon = TiposPokemon.ELECTRICO;
-            } else if (opcionPokemon == 4){
-                tipoPokemon = TiposPokemon.PSIQUICO;
-            } else {
-                System.out.println("Opción no válida.");
-            }
-            while(true){
-                System.out.println("Ingrese la vida del pokemon: ");
-                short vidaPokemon = sc.nextShort();
-                sc.nextLine(); // Consumir el salto de línea
-                if (vidaPokemon > 50 && vidaPokemon < 200){
-                    Pokemon pokemon = new Pokemon(nombrePokemon, tipoPokemon, vidaPokemon);
-                    entrenador1.agregarPokemonEquipo(pokemon);
-                    break;
-                } else {
-                    System.out.println("La vida debe ser mayor a 0.");
-                }
+            if (opcionAtaque == 1){
+                tipoAtaque = TiposPokemon.FUEGO;
+            } else if (opcionAtaque == 2){
+                tipoAtaque = TiposPokemon.PSIQUICO;
+            } else if (opcionAtaque == 3){
+                tipoAtaque = TiposPokemon.ELECTRICO;
+            } else if (opcionAtaque == 4){
+                tipoAtaque = TiposPokemon.AGUA;
             }
         }
     }
