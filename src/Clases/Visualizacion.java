@@ -21,10 +21,10 @@ public class Visualizacion {
     }
     public void agregar_pokemon(Scanner sc){
         while (true){
+            System.out.println("Seleccione un entrenador para agregar un Pokémon: ");
             System.out.println("1- Entrenador 1");
             System.out.println("2- Entrenador 2");
             System.out.println("3- Salir");
-            System.out.println("Seleccione un entrenador para agregar un Pokémon: ");
             int opcion = sc.nextInt();
             sc.nextLine(); // Consumir el salto de línea
             switch (opcion) {
