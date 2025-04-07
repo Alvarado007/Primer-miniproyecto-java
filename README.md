@@ -20,9 +20,6 @@
 </div>
 
 ###
-<img align="right" height="150" src="https://i.pinimg.com/originals/4e/fe/e1/4efee18cb06f3d2f8456a40d1e0460e7.gif?cid=6c09b952llhupk66joic0ml8gbch148n2dfdqsvzj7z7f0em&ep=v1_gifs_search&rid=200w.gif&ct=g"  />
-
-
 ## 📦 Proyecto: Simulador de Batallas Pokémon
 Este proyecto es una simulación de combates entre Pokémon utilizando Java. El sistema permite que entrenadores elijan y enfrenten Pokémon con distintos ataques y tipos (agua, fuego, psíquico y eléctrico).
 
@@ -55,7 +52,9 @@ classDiagram
     Pokemon "1" --> "*" Ataque
     Visualizacion --> Entrenador
 ```
-
+###
+<img align="right" height="150" src="https://i.pinimg.com/originals/4e/fe/e1/4efee18cb06f3d2f8456a40d1e0460e7.gif?cid=6c09b952llhupk66joic0ml8gbch148n2dfdqsvzj7z7f0em&ep=v1_gifs_search&rid=200w.gif&ct=g"  />
+###
 ### 🛠️ Tecnologías
 - Java ☕
 - Visual Studio Code 💻
