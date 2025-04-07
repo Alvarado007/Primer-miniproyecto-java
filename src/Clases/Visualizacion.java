@@ -25,6 +25,7 @@ public class Visualizacion {
             System.out.println("2- Entrenador 2");
             System.out.println("3- Salir");
             System.out.println("4- Batalla");
+
             int opcion = sc.nextInt();
             sc.nextLine();
             switch (opcion) {

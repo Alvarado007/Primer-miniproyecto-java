@@ -164,6 +164,15 @@ public class Entrenador {
                         } else {
                             System.out.println("La potencia debe ser mayor a 20 y menor a 100.");
                         }
+                    System.out.println("Ingrese la potencia del ataque: ");
+                    short potencia = sc.nextShort();
+                    sc.nextLine();
+                    if ((potencia>20 && potencia<100)&& (tipoAtaque.equals(pokemon.getTipo()))){ 
+                        Ataque ataque = new Ataque(nombreAtaque, tipoDano, potencia, tipoAtaque);
+                        pokemon.addAtaque(ataque);
+                        break;
+                    } else {
+                        System.out.println("La potencia debe ser mayor a 20 y menor a 100.");
                     }
                 }
             }
@@ -174,6 +183,7 @@ public class Entrenador {
         for (Pokemon pokemon : equipo_entrenador) {
             System.out.println(nombre_entrenador + " Nombre del pokémon " + contador++ + ": " + pokemon.getNombre() + ", Tipo: " + pokemon.getTipo() + ", Vida: " + pokemon.getVida());
             pokemon.mostrarAtaques();
+
         }
     }
 
