@@ -8,13 +8,15 @@ public class Pokemon {
     private TiposPokemon tipo;
     private short vida;
     private byte contadorataques = 0;
+    private TiposPokemon counter;
 
     
-    public Pokemon(String nombre, TiposPokemon tipo, short vida) {
+    public Pokemon(String nombre, TiposPokemon tipo, short vida, TiposPokemon counter) {
         this.nombre = nombre;
         this.ataques = new ArrayList<Ataque>();
         this.tipo = tipo;
         this.vida = vida;
+        this.counter = counter;
     }
     
     public String getNombre() {
@@ -34,6 +36,12 @@ public class Pokemon {
     }
     public void setVida(short vida) {
         this.vida = vida;
+    }
+    public TiposPokemon getCounter() {
+        return counter;
+    }
+    public void setCounter(TiposPokemon counter) {
+        this.counter = counter;
     }
     public void addAtaque(Ataque ataque) {
         if (ataques == null || contadorataques < 4) {

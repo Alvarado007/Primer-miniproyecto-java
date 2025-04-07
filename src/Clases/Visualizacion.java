@@ -23,7 +23,7 @@ public class Visualizacion {
             System.out.println("Seleccione un entrenador para agregar un Pokémon: ");
             System.out.println("1- Entrenador 1");
             System.out.println("2- Entrenador 2");
-            System.out.println("3- Salir");
+            System.out.println("3- Mostrar equipos de los entrenadores");
             System.out.println("4- Batalla");
             int opcion = sc.nextInt();
             sc.nextLine();
@@ -99,11 +99,11 @@ public class Visualizacion {
         while (true) {
             if (vidaPokemon0 <= 0) {
                 System.out.println(entrenadores.get(1).getNombre_entrenador() + " ha ganado la batalla!");
-                break;
+                System.exit(0);
             } 
             else if (vidaPokemon1 <= 0) {
                 System.out.println(entrenadores.get(0).getNombre_entrenador() + " ha ganado la batalla!");
-                break;
+                System.exit(0);
             } 
             else if (vidaPokemon0 < vidaPokemon1) {
                 System.out.println(entrenadores.get(0).getNombre_entrenador() + " Tiene el primer turno ");
@@ -116,8 +116,13 @@ public class Visualizacion {
                     sc.nextLine();
                     Ataque ataque0 = peleaPokemon.get(0).getAtaques().get(ataqueElegido0 - 1);
                     System.out.println(peleaPokemon.get(0).getNombre() + " ha usado " + ataque0.getNombreAtaque());
-
-                    vidaPokemon1 -= ataque0.getPotencia();
+                    if(peleaPokemon.get(0).getTipo() == peleaPokemon.get(1).getCounter()){
+                        vidaPokemon1 -= ataque0.getPotencia() + (ataque0.getPotencia() * 0.3);
+                    }
+                    else {
+                        vidaPokemon1 -= ataque0.getPotencia();
+                    }
+                    
                     System.out.println(peleaPokemon.get(1).getNombre() + " ha recibido " + ataque0.getPotencia());
 
                     if (vidaPokemon1 <= 0) {
@@ -135,18 +140,74 @@ public class Visualizacion {
                     sc.nextLine();
                     Ataque ataque1 = peleaPokemon.get(1).getAtaques().get(ataqueElegido1 - 1);
                     System.out.println(peleaPokemon.get(1).getNombre() + " ha usado " + ataque1.getNombreAtaque());
+                    if (peleaPokemon.get(1).getTipo() == peleaPokemon.get(0).getCounter()){
+                        vidaPokemon0 -= ataque1.getPotencia() + (ataque1.getPotencia() * 0.3);
+                    }
+                    else {
+                        vidaPokemon0 -= ataque1.getPotencia();
+                    }
 
-                    vidaPokemon0 -= ataque1.getPotencia();
-                    System.out.println(peleaPokemon.get(1).getNombre() + " ha recibido " + ataque1.getPotencia());
+                    System.out.println(peleaPokemon.get(0).getNombre() + " ha recibido " + ataque1.getPotencia());
                     if (vidaPokemon0 <= 0) {
                         System.out.println(peleaPokemon.get(0).getNombre() + " ha caído!");
                         break;
                     } else {
                         System.out.println("Vida restante: " + vidaPokemon0);
                     }
-                
                 }
+            }
+            else if (vidaPokemon0 > vidaPokemon1) {
+                System.out.println(entrenadores.get(1).getNombre_entrenador() + " Tiene el primer turno ");
+                while (vidaPokemon0 > 0 && vidaPokemon1 > 0) {
+                        
+                    System.out.println(peleaPokemon.get(1).getNombre() + " " + vidaPokemon1 + "HP");
+                    System.out.println(entrenadores.get(1).getNombre_entrenador() + " elige un ataque: ");
+                    peleaPokemon.get(1).mostrarAtaques();
+                    int ataqueElegido0 = sc.nextInt();
+                    sc.nextLine();
+                    Ataque ataque0 = peleaPokemon.get(1).getAtaques().get(ataqueElegido0 - 1);
+                    System.out.println(peleaPokemon.get(1).getNombre() + " ha usado " + ataque0.getNombreAtaque());
+                    if (peleaPokemon.get(1).getTipo() == peleaPokemon.get(0).getCounter()){
+                        vidaPokemon0 -= ataque0.getPotencia() + (ataque0.getPotencia() * 0.3);
+                        System.out.println(peleaPokemon.get(0).getNombre() + " ha recibido " + (ataque0.getPotencia() + (ataque0.getPotencia() * 0.3)));
+                    }
+                    else {
+                        vidaPokemon0 -= ataque0.getPotencia();
+                        System.out.println(peleaPokemon.get(0).getNombre() + " ha recibido " + ataque0.getPotencia());
+                    }
+    
+                    if (vidaPokemon0 <= 0) {
+                        System.out.println(peleaPokemon.get(1).getNombre() + " ha caído!");
+                        break;
+                    } else {
+                        System.out.println("Vida restante: " + vidaPokemon0);
+                    }
+                        
+    
+                    System.out.println(peleaPokemon.get(0).getNombre() + " " + vidaPokemon0 + "HP");
+                    System.out.println(entrenadores.get(0).getNombre_entrenador() + " elige un ataque: ");
+                    peleaPokemon.get(0).mostrarAtaques();
+                    int ataqueElegido1 = sc.nextInt();
+                    sc.nextLine();
+                    Ataque ataque1 = peleaPokemon.get(0).getAtaques().get(ataqueElegido1 - 1);
+                    System.out.println(peleaPokemon.get(0).getNombre() + " ha usado " + ataque1.getNombreAtaque());
+                    if (peleaPokemon.get(0).getTipo() == peleaPokemon.get(1).getCounter()){
+                        vidaPokemon1 -= ataque1.getPotencia() + (ataque1.getPotencia() * 0.3);
+                        System.out.println(peleaPokemon.get(1).getNombre() + " ha recibido " + (ataque1.getPotencia() + (ataque1.getPotencia() * 0.3)));
+                    }
+                    else {
+                        vidaPokemon1 -= ataque1.getPotencia();
+                        System.out.println(peleaPokemon.get(1).getNombre() + " ha recibido " + ataque1.getPotencia());
+                    }
+
+                    if (vidaPokemon1 <= 0) {
+                        System.out.println(peleaPokemon.get(1).getNombre() + " ha caído!");
+                        break;
+                    } else {
+                        System.out.println("Vida restante: " + vidaPokemon1);
+                    }
             }
         } 
     }
+}
 }
