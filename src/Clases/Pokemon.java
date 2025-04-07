@@ -1,7 +1,5 @@
 package Clases;
 import java.util.ArrayList;
-
-import Enums.TipoDano;
 import Enums.TiposPokemon;
 
 public class Pokemon {
@@ -49,9 +47,10 @@ public class Pokemon {
         return ataques;
     }
 
-    public void mostarAtaques() {
+    public void mostrarAtaques() {
+        contadorataques = 1;
         for (Ataque ataque : ataques) {
-            System.out.println("Nombre: " + ataque.getNombreAtaque() + ", Potencia: " + ataque.getPotencia() + ", Tipo: " + ataque.getTipoAtaque() + ", Tipo de Daño: " + ataque.getTipoDano());
+            System.out.println(contadorataques++ + ". " + "Nombre: " + ataque.getNombreAtaque() + ", Potencia: " + ataque.getPotencia() + ", Tipo: " + ataque.getTipoAtaque() + ", Tipo de Daño: " + ataque.getTipoDano());
         }
     }
 

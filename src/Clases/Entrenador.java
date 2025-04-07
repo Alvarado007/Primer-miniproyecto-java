@@ -38,9 +38,9 @@ public class Entrenador {
 
     public void elegirPokemonBatallaManual(Scanner sc) {
         for (int i=0; i<3; i++){
-            System.out.println("Ingrese el nombre del Pókemon: ");
+            System.out.println("Ingrese el nombre del Pókemon " + (i+1) + ": ");
             String nombrePokemon = sc.nextLine();
-            System.out.println("Ingrese el tipo del Pókemon: ");
+            System.out.println("Ingrese el tipo del Pókemon " + (i+1) + ": ");
             System.out.println("1- Agua");
             System.out.println("2- Fuego");
             System.out.println("3- Electrico");
@@ -60,7 +60,7 @@ public class Entrenador {
                 System.out.println("Opción no válida.");
             }
             while(true){
-                System.out.println("Ingrese la vida del Pókemon: ");
+                System.out.println("Ingrese la vida del Pókemon " + (i+1) + ": ");
                 short vidaPokemon = sc.nextShort();
                 sc.nextLine();
                 if (vidaPokemon > 50 && vidaPokemon < 200){
@@ -153,15 +153,17 @@ public class Entrenador {
                     } else {
                         System.out.println("Opción no válida.");
                     }
-                    System.out.println("Ingrese la potencia del ataque: ");
-                    short potencia = sc.nextShort();
-                    sc.nextLine();
-                    if ((potencia>20 && potencia<100)&& (tipoAtaque.equals(pokemon.getTipo()))){ 
-                        Ataque ataque = new Ataque(nombreAtaque, tipoDano, potencia, tipoAtaque);
-                        pokemon.addAtaque(ataque);
-                        break;
-                    } else {
-                        System.out.println("La potencia debe ser mayor a 20 y menor a 100.");
+                    while (true){
+                        System.out.println("Ingrese la potencia del ataque: ");
+                        short potencia = sc.nextShort();
+                        sc.nextLine();
+                        if ((potencia>20 && potencia<100)&& (tipoAtaque.equals(pokemon.getTipo()))){ 
+                            Ataque ataque = new Ataque(nombreAtaque, tipoDano, potencia, tipoAtaque);
+                            pokemon.addAtaque(ataque);
+                            break;
+                        } else {
+                            System.out.println("La potencia debe ser mayor a 20 y menor a 100.");
+                        }
                     }
                 }
             }
@@ -170,8 +172,8 @@ public class Entrenador {
     public void mostrarEquipo() {
         int contador = 1;
         for (Pokemon pokemon : equipo_entrenador) {
-            System.out.println(nombre_entrenador + " Nombre del pokémon " + contador++ + ": " + pokemon.getNombre());
-            pokemon.mostarAtaques();
+            System.out.println(nombre_entrenador + " Nombre del pokémon " + contador++ + ": " + pokemon.getNombre() + ", Tipo: " + pokemon.getTipo() + ", Vida: " + pokemon.getVida());
+            pokemon.mostrarAtaques();
         }
     }
 
