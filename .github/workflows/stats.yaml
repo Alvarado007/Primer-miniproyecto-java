@@ -14,7 +14,8 @@ jobs:
 
       - name: Generar README con estadísticas
         uses: lowlighter/metrics@latest
-        with:
+        with:  
+          token: ${{ secrets.GITHUB_TOKEN }}
           user: Alvarado007
           template: classic
           base: header, repositories, metadata
