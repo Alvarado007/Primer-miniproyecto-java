@@ -84,7 +84,7 @@ public class Visualizacion {
         System.out.println(entrenadores.get(0).getNombre_entrenador() + " vs " + entrenadores.get(1).getNombre_entrenador()); 
         ArrayList<Pokemon> peleaPokemon = new ArrayList<Pokemon>();
 
-        for (int i = 0; i < entrenadores.size(); i++) {
+        for (byte i = 0; i < entrenadores.size(); i++) {
             System.out.println(entrenadores.get(i).getNombre_entrenador() + " elige su Pokémon: ");
             entrenadores.get(i).mostrarEquipo();
             System.out.println("Seleccione el Pokémon que desea usar: ");
@@ -124,7 +124,9 @@ public class Visualizacion {
                 Pokemon pokemonPerdedor = peleaPokemon.get(1);
                 int vidaGanador = vidaPokemon0;
                 int vidaPerdedor = vidaPokemon1;
-                desarroloBatalla(sc, entrenadorGanador, entrenadorPerdedor, pokemonGanador, pokemonPerdedor, vidaGanador, vidaPerdedor);
+                ArrayList<Integer> vida = desarroloBatalla(sc, entrenadorGanador, entrenadorPerdedor, pokemonGanador, pokemonPerdedor, vidaGanador, vidaPerdedor);
+                vidaPokemon0 = vida.get(0);
+                vidaPokemon1 = vida.get(1);
                 System.out.println(vidaGanador + " " + vidaPerdedor);
             }
             else if (vidaPokemon0 > vidaPokemon1) {
@@ -134,12 +136,14 @@ public class Visualizacion {
                 Pokemon pokemonPerdedor = peleaPokemon.get(0);
                 int vidaGanador = vidaPokemon1;
                 int vidaPerdedor = vidaPokemon0;
-                desarroloBatalla(sc, entrenadorGanador, entrenadorPerdedor, pokemonGanador, pokemonPerdedor, vidaGanador, vidaPerdedor);
+                ArrayList<Integer> vida = desarroloBatalla(sc, entrenadorGanador, entrenadorPerdedor, pokemonGanador, pokemonPerdedor, vidaGanador, vidaPerdedor);
+                vidaPokemon1 = vida.get(0);
+                vidaPokemon0 = vida.get(1);
                 System.out.println(vidaGanador + " " + vidaPerdedor);
             } 
         }
     }
-    public void desarroloBatalla(Scanner sc,Entrenador entrenadorGanador,Entrenador entrenadorPerdedor,Pokemon pokemonGanador,Pokemon pokemonPerdedor,int VidaPrimerPokemon,int VidaSegundoPokemon){ {
+    public ArrayList<Integer> desarroloBatalla(Scanner sc,Entrenador entrenadorGanador,Entrenador entrenadorPerdedor,Pokemon pokemonGanador,Pokemon pokemonPerdedor,int VidaPrimerPokemon,int VidaSegundoPokemon){ {
         System.out.println(entrenadorGanador.getNombre_entrenador() + " Tiene el primer turno ");
                 while (VidaPrimerPokemon > 0 && VidaSegundoPokemon > 0) {
                     
@@ -189,6 +193,10 @@ public class Visualizacion {
                         System.out.println("Vida restante: " + VidaPrimerPokemon);
                     }
                 }
+                ArrayList<Integer> vida = new ArrayList<Integer>();
+                vida.add(VidaPrimerPokemon);
+                vida.add(VidaSegundoPokemon);
+                return vida;
             }
     }
 }

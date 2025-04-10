@@ -9,7 +9,7 @@ import Enums.TiposPokemon;
 public class Entrenador extends SerVivo {
     private String nombre_entrenador;
     private ArrayList<Pokemon> equipo_entrenador;
-    private int contador_pokemones = 0;
+    private byte contador_pokemones = 0;
 
 
     public String getNombre_entrenador() {
@@ -37,7 +37,7 @@ public class Entrenador extends SerVivo {
     }
 
     public void elegirPokemonBatallaManual(Scanner sc) {
-        for (int i=0; i<3; i++){
+        for (byte i=0; i<3; i++){
             System.out.println("Ingrese el nombre del Pókemon " + (i+1) + ": ");
             String nombrePokemon = sc.nextLine();
             System.out.println("Ingrese el tipo del Pókemon " + (i+1) + ": ");
@@ -97,7 +97,7 @@ public class Entrenador extends SerVivo {
             pokemones.add(new Pokemon("Alakazam", TiposPokemon.PSIQUICO, (short)200, TiposPokemon.FUEGO));
             pokemones.add(new Pokemon("Raichu", TiposPokemon.ELECTRICO, (short)180, TiposPokemon.PSIQUICO));
             pokemones.add(new Pokemon("Arcanine", TiposPokemon.FUEGO, (short)200, TiposPokemon.AGUA));
-            for (int i=0; i<3; i++){
+            for (byte i=0; i<3; i++){
                 int randomIndex = (int) (Math.random() * pokemones.size());
                 Pokemon pokemon = pokemones.get(randomIndex);
                 agregarPokemonEquipo(pokemon);
@@ -107,7 +107,7 @@ public class Entrenador extends SerVivo {
     public void agregraAtaquesPokemonesAutomatico(Scanner sc) {
         ArrayList<Ataque>ataques=Ataque.getAtaques();
         for (Pokemon pokemon : equipo_entrenador) {
-            for (int i=0; i<4; i++){
+            for (byte i=0; i<4; i++){
                 while (true){
                     int randomIndex = (int) (Math.random() * ataques.size());
                     Ataque ataque = ataques.get(randomIndex);
@@ -122,7 +122,7 @@ public class Entrenador extends SerVivo {
     }
     public void agregarAtaquePokemonManual(Scanner sc) {
         for (Pokemon pokemon : equipo_entrenador) {
-            for (int i=0; i<4; i++){
+            for (byte i=0; i<4; i++){
                 while (true){
                     System.out.println("Ingrese el nombre del ataque " + (i+1) + " " + "de " + pokemon.getNombre() + ": ");
                     String nombreAtaque = sc.nextLine();
@@ -175,7 +175,7 @@ public class Entrenador extends SerVivo {
         }
     }
     public void mostrarEquipo() {
-        int contador = 1;
+        byte contador = 1;
         for (Pokemon pokemon : equipo_entrenador) {
             System.out.println(nombre_entrenador + " Nombre del pokémon " + contador++ + ": " + pokemon.getNombre() + ", Tipo: " + pokemon.getTipo() + ", Vida: " + pokemon.getVida());
             pokemon.mostrarAtaques();
