@@ -94,8 +94,8 @@ public class Visualizacion {
         }
 
         System.out.println("¡La batalla ha comenzado!");
-        int vidaPokemon0 = peleaPokemon.get(0).getVida();
-        int vidaPokemon1 = peleaPokemon.get(1).getVida();
+        short vidaPokemon0 = peleaPokemon.get(0).getVida();
+        short vidaPokemon1 = peleaPokemon.get(1).getVida();
         while (true) {
             if (vidaPokemon0 <= 0) {
                 System.out.println(entrenadores.get(1).getNombre_entrenador() + " ha ganado la batalla!");
