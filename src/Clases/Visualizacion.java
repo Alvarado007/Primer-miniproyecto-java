@@ -127,7 +127,6 @@ public class Visualizacion {
                 ArrayList<Integer> vida = desarroloBatalla(sc, entrenadorGanador, entrenadorPerdedor, pokemonGanador, pokemonPerdedor, vidaGanador, vidaPerdedor);
                 vidaPokemon0 = vida.get(0);
                 vidaPokemon1 = vida.get(1);
-                System.out.println(vidaGanador + " " + vidaPerdedor);
             }
             else if (vidaPokemon0 > vidaPokemon1) {
                 Entrenador entrenadorGanador = entrenadores.get(1);
@@ -139,7 +138,6 @@ public class Visualizacion {
                 ArrayList<Integer> vida = desarroloBatalla(sc, entrenadorGanador, entrenadorPerdedor, pokemonGanador, pokemonPerdedor, vidaGanador, vidaPerdedor);
                 vidaPokemon1 = vida.get(0);
                 vidaPokemon0 = vida.get(1);
-                System.out.println(vidaGanador + " " + vidaPerdedor);
             } 
         }
     }
@@ -156,12 +154,13 @@ public class Visualizacion {
                     System.out.println(pokemonGanador.getNombre() + " ha usado " + ataque0.getNombreAtaque());
                     if(pokemonGanador.getTipo() == pokemonPerdedor.getCounter()){
                         VidaSegundoPokemon -= ataque0.getPotencia() + (ataque0.getPotencia() * 0.3);
+                        System.out.println(pokemonPerdedor.getNombre() + " ha recibido " + (ataque0.getPotencia() + (ataque0.getPotencia() * 0.3)));
                     }
                     else {
                         VidaSegundoPokemon -= ataque0.getPotencia();
+                        System.out.println(pokemonPerdedor.getNombre() + " ha recibido " + ataque0.getPotencia());
                     }
                     
-                    System.out.println(pokemonPerdedor.getNombre() + " ha recibido " + ataque0.getPotencia());
 
                     if (VidaSegundoPokemon <= 0) {
                         System.out.println(pokemonPerdedor.getNombre() + " ha caído!");
@@ -180,12 +179,13 @@ public class Visualizacion {
                     System.out.println(pokemonPerdedor.getNombre() + " ha usado " + ataque1.getNombreAtaque());
                     if (pokemonPerdedor.getTipo() == pokemonGanador.getCounter()){
                         VidaPrimerPokemon -= ataque1.getPotencia() + (ataque1.getPotencia() * 0.3);
+                        System.out.println(pokemonGanador.getNombre() + " ha recibido " + (ataque1.getPotencia() + (ataque1.getPotencia() * 0.3)));
                     }
                     else {
                         VidaPrimerPokemon -= ataque1.getPotencia();
+                        System.out.println(pokemonGanador.getNombre() + " ha recibido " + ataque1.getPotencia());
                     }
 
-                    System.out.println(pokemonGanador.getNombre() + " ha recibido " + ataque1.getPotencia());
                     if (VidaPrimerPokemon <= 0) {
                         System.out.println(pokemonGanador.getNombre() + " ha caído!");
                         break;
