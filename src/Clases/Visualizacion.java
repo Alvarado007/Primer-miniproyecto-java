@@ -82,7 +82,7 @@ public class Visualizacion {
         System.out.println(entrenadores.get(0).getNombre_entrenador() + " vs " + entrenadores.get(1).getNombre_entrenador()); 
         ArrayList<Pokemon> peleaPokemon = new ArrayList<Pokemon>();
 
-        for (int i = 0; i < entrenadores.size(); i++) {
+        for (byte i = 0; i < entrenadores.size(); i++) {
             System.out.println(entrenadores.get(i).getNombre_entrenador() + " elige su Pokémon: ");
             entrenadores.get(i).mostrarEquipo();
             System.out.println("Seleccione el Pokémon que desea usar: ");
@@ -94,8 +94,8 @@ public class Visualizacion {
         }
 
         System.out.println("¡La batalla ha comenzado!");
-        int vidaPokemon0 = peleaPokemon.get(0).getVida();
-        int vidaPokemon1 = peleaPokemon.get(1).getVida();
+        short vidaPokemon0 = peleaPokemon.get(0).getVida();
+        short vidaPokemon1 = peleaPokemon.get(1).getVida();
         while (true) {
             if (vidaPokemon0 <= 0) {
                 System.out.println(entrenadores.get(1).getNombre_entrenador() + " ha ganado la batalla!");
