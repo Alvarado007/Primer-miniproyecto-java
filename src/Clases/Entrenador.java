@@ -6,7 +6,7 @@ import java.util.Scanner;
 import Enums.TipoDano;
 import Enums.TiposPokemon;
 
-public class Entrenador {
+public class Entrenador extends SerVivo {
     private String nombre_entrenador;
     private ArrayList<Pokemon> equipo_entrenador;
     private int contador_pokemones = 0;
@@ -180,6 +180,16 @@ public class Entrenador {
             System.out.println(nombre_entrenador + " Nombre del pokémon " + contador++ + ": " + pokemon.getNombre() + ", Tipo: " + pokemon.getTipo() + ", Vida: " + pokemon.getVida());
             pokemon.mostrarAtaques();
         }
+    }
+
+    @Override
+    void felicidad() {
+        System.out.println("El entrenador " + nombre_entrenador + " está feliz  por que su equipo ha ganado.");
+    }
+
+    @Override
+    void tristeza() {
+        System.out.println("El entrenador " + nombre_entrenador + " está triste por que su equipo ha perdido.");
     }
 
 
