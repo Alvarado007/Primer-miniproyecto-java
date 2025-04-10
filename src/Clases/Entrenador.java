@@ -183,14 +183,14 @@ public class Entrenador extends SerVivo {
     }
 
     @Override
-    public void felcidad() {
-        System.out.println("El entrenador " + nombre_entrenador + " está feliz por el resultado de la batalla y por que su equipo ha ganado.");
+    void felicidad() {
+        System.out.println("El entrenador " + nombre_entrenador + " está feliz  por que su equipo ha ganado.");
     }
 
     @Override
-    public void triteza() {
-        System.out.println("El entrenador " + nombre_entrenador + " está triste por el resultado de la batalla y por que su equipo ha perdido.");
-    }
+    void tristeza() {
+        System.out.println("El entrenador " + nombre_entrenador + " está triste por que su equipo ha perdido.")
+      }
 
 
 }
