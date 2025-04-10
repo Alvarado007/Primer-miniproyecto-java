@@ -99,10 +99,18 @@ public class Visualizacion {
         while (true) {
             if (vidaPokemon0 <= 0) {
                 System.out.println(entrenadores.get(1).getNombre_entrenador() + " ha ganado la batalla!");
+                Entrenador entrenadorGanador = entrenadores.get(1);
+                Entrenador entrenadorPerdedor = entrenadores.get(0);
+                entrenadorGanador.felcidad();
+                entrenadorPerdedor.triteza();
                 System.exit(0);
             } 
             else if (vidaPokemon1 <= 0) {
                 System.out.println(entrenadores.get(0).getNombre_entrenador() + " ha ganado la batalla!");
+                Entrenador entrenadorGanador = entrenadores.get(0);
+                Entrenador entrenadorPerdedor = entrenadores.get(1);    
+                entrenadorGanador.felcidad();
+                entrenadorPerdedor.triteza();
                 System.exit(0);
             } 
             else if (vidaPokemon0 < vidaPokemon1) {
