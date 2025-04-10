@@ -189,8 +189,8 @@ public class Entrenador extends SerVivo {
 
     @Override
     void tristeza() {
-        System.out.println("El entrenador " + nombre_entrenador + " está triste por que su equipo ha perdido.");
-    }
+        System.out.println("El entrenador " + nombre_entrenador + " está triste por que su equipo ha perdido.")
+      }
 
 
 }
