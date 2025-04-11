@@ -31,6 +31,12 @@ Este proyecto es una simulación de combates entre Pokémon utilizando Java. El 
 ### 📊 Relación entre Clases
 ```mermaid
 classDiagram
+    class SerVivo {
+        <<abstract>>
+        + felicidad() : void
+        + tristeza() : void
+    }
+
     class Entrenador {
         - nombre : String
         - equipo_pokemon : ArrayList<Pokemon>
@@ -44,7 +50,10 @@ classDiagram
         + agregraAtaquesPokemonesAutomatico(Scanner sc)
         + agregarAtaquePokemonManual(Scanner sc)
         + mostrarEquipo(Scanner sc)
+        + felicidad() : void
+        + tristeza() : void
     }
+
     class Pokemon {
         - nombre : String
         - tipo : TiposPokemon
@@ -65,6 +74,7 @@ classDiagram
         + getAtaques()
         + mostrarAtaques()
     }
+
     class Ataque {
         - nombreAtaque : String
         - tipodano : TipoDano
@@ -80,16 +90,19 @@ classDiagram
         + getTipoAtaque()
         + setTipoAtaque(TiposPokemon tipoAtaque)
         + getAtaques() : static
-
     }
+
     class Visualizacion {
         + iniciarJuego(Scanner sc)
         + agregar_pokemon(Scanner sc)
         + batalla(Scanner sc)
     }
+
+    SerVivo <|-- Entrenador
     Entrenador "1" --> "*" Pokemon
     Pokemon "1" --> "*" Ataque
     Visualizacion --> Entrenador
+
 ```
 ###
 <img align="right" height="150" src="https://i.pinimg.com/originals/4e/fe/e1/4efee18cb06f3d2f8456a40d1e0460e7.gif?cid=6c09b952llhupk66joic0ml8gbch148n2dfdqsvzj7z7f0em&ep=v1_gifs_search&rid=200w.gif&ct=g"  />
@@ -110,9 +123,9 @@ git clone https://github.com/Alvarado007/Primer-miniproyecto-java.git
 4. Ejecuta la clase `Main` (por implementar) o una clase de prueba que cree entrenadores y pokémon para simular batallas.
 
 ### 👥 Autores
-- Samuel Alvarado – [GitHub](https://github.com/Alvarado007)
-- Santiago Arboleda – [GitHub](https://github.com/SantiagoA0408)
-- Juan Manuel Gómez – [GitHub](https://github.com/JuanManuelG26706)
+- Samuel Alvarado – [GitHub](https://github.com/Alvarado007) 202459469
+- Santiago Arboleda – [GitHub](https://github.com/SantiagoA0408) 202459463
+- Juan Manuel Gómez – [GitHub](https://github.com/JuanManuelG26706) 202459450
 
 ### 📬 Contacto
 Si quieres mejorar este proyecto o darme sugerencias, no dudes en escribirme.
